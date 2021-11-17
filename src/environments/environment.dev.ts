@@ -8,5 +8,16 @@ export const environment = {
         kicks: 'https://walkingplayers.net/control/kicks.php'
     },
     urlShopWalkingPlayers: 'https://walkingplayers.tebex.io/',
-    urlShopNewsWalkingPlayers: 'https://walkingplayers.tebex.io/category/edicion-limitada'
+    urlShopNewsWalkingPlayers: 'https://walkingplayers.tebex.io/category/edicion-limitada',
+
+    //FIREBASE
+    firebaseConfig: {
+        apiKey: "AIzaSyBheX_SJmw3WXj9sw1MmIqYIXwIoXr2I60",
+        authDomain: "aae-walkingplayers.firebaseapp.com",
+        projectId: "aae-walkingplayers",
+        storageBucket: "aae-walkingplayers.appspot.com",
+        messagingSenderId: "424354803013",
+        appId: "1:424354803013:web:bacc01f553aee3a22ee22c",
+        measurementId: "G-DWG0L88EJJ"
+    }
 };

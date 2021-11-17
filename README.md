@@ -52,6 +52,11 @@ Modals
 Icons
 [FontAwesome Alzate Credentials](https://fontawesome.com/v5.15/icons?d=gallery&p=2).
 
+Firebase Google
+[Firebase Google:](https://firebase.google.com/docs)
+https://console.firebase.google.com/project/aae-walkingplayers
+Base de datos de: alzat3e@gmail.com
+
 # ANGULAR README
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
 

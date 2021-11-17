@@ -19,6 +19,9 @@ export class UtilService {
         //Menú
         let menu: any = document.getElementById("menu-wp");
         menu.classList.remove("wp-opacity-version-menu");
+        //padding top en los componentes comúnes
+        let containerRouter: any = document.getElementById("container-router");
+        containerRouter.style.paddingTop = "130px";
     }
 
     /*
@@ -33,6 +36,9 @@ export class UtilService {
         //Menú
         let menu: any = document.getElementById("menu-wp");
         menu.classList.add("wp-opacity-version-menu");
+        //padding top en los componentes comúnes
+        let containerRouter: any = document.getElementById("container-router");
+        containerRouter.style.paddingTop = "0px";
     }
 
     /*

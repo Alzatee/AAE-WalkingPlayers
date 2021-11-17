@@ -27,6 +27,14 @@ const routes: Routes = [
       ),
     // canActivate: 
   },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then(
+        (module) => module.AdminLoginModule
+      ),
+    // canActivate: 
+  },
   { path: '', redirectTo: '', pathMatch: 'full' },//Auto redirect
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404' } //404 component

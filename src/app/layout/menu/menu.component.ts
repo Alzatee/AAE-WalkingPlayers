@@ -4,6 +4,7 @@ import { environment } from '@env/environment';
 import { CommonService } from '@core/services/common/common.service';
 import Swal from 'sweetalert2'
 import { UtilService } from '@shared/util.service';
+import { AuthService } from '@core/services/auth/auth.service';
 declare const menuAnimationScroll: any;
 
 @Component({
@@ -14,10 +15,12 @@ declare const menuAnimationScroll: any;
 export class MenuComponent implements OnInit {
   walkingPlayersInformationMinecraft: any;
   urlShopWalkingPlayers: string = '';
+  infoLoggedOnUser = this.authService.getLoggedOnUser();
 
   constructor(
     private commonService: CommonService,
-    public utilService: UtilService
+    public utilService: UtilService,
+    private authService: AuthService
   ) {
     this.urlShopWalkingPlayers = environment.urlShopWalkingPlayers;
   }
@@ -42,5 +45,8 @@ export class MenuComponent implements OnInit {
       });
   }
 
+  logout() {
+    this.authService.logout();
+  }
 
 }

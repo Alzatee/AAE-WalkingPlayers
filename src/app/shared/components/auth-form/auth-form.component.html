@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="authForm" #formDirective="ngForm" novalidate>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <mat-form-field class="mat-form-field">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" id="email" name="email" formControlName="email" required>
+                        <!-- <mat-error *ngIf="utilService.validarCampo('idTipoDocumento', crearTipoDocumentoFormulario)">
+                            {{utilService.obtenerMensajeError('idTipoDocumento', crearTipoDocumentoFormulario)}}
+                        </mat-error> -->
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <mat-form-field class="mat-form-field">
+                        <mat-label>Password</mat-label>
+                        <input matInput class="uppercase-first-letter" placeholder="Password" id="password"
+                            name="password" formControlName="password" required>
+                        <!-- <mat-error *ngIf="utilService.validarCampo('descripcion', crearTipoDocumentoFormulario)">
+                            {{utilService.obtenerMensajeError('descripcion', crearTipoDocumentoFormulario)}}
+                        </mat-error> -->
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mt-3 mb-3">
+                <div *ngIf="action === 'login'" class="col-md-12">
+                    <!--Se omite de momento con google ya que podría ingresar cualquiera y esto es un admin module-->
+                    <!-- <button mat-raised-button color="accent" (click)="loginWithGoogle()">
+                        Auth Google
+                    </button> -->
+                    <button mat-raised-button color="accent" (click)="loginWithEmail()">
+                        <!-- <mat-icon aria-hidden="false" aria-label="Guardar">save</mat-icon> -->
+                        Auth Email
+                    </button>
+                </div>
+
+                <div *ngIf="action === 'register'" class="col-md-12">
+                    <button mat-raised-button color="accent" (click)="registerEmail()">
+                        Register Email
+                    </button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

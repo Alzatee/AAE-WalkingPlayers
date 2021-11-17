@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorServicesService } from '@core/interceptor/interceptor-services.service';
-import { SharedModule } from '@shared/shared.module';
 
-import { AppRoutingModule } from './app-routing.module';
+//Components
 import { AppComponent } from './app.component';
 import { MenuComponent } from './layout/menu/menu.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { BodyComponent } from './layout/body/body.component';
-
-import { FacebookModule } from 'ngx-facebook';
 import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
+
+//Modules
+import { SharedModule } from '@shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
+import { FacebookModule } from 'ngx-facebook';//Para chat o (eliminar) si no voy a suar chat messenger.
+
+//Firebase Modules
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '@env/environment';
 
 
 @NgModule({
@@ -26,9 +34,13 @@ import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.co
     SharedModule,
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     // other imports   
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    //Firebase Config Modules
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule //Módulo de autentificación de Firebase.
   ],
   providers: [
       { // Interceptor propio.
