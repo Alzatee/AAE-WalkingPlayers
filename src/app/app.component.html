@@ -1,0 +1,19 @@
+<!-- Ambiente: {{pageEnvironment}} -->
+<!--Modal de carga-->
+<wp-modal-load *ngIf="modalLoadServicesService.isLoading | async"></wp-modal-load>
+<!--Estructura-->
+<section class="container-fluid">
+  <wp-header></wp-header>
+</section>
+<section class="container-fluid">
+  <wp-body></wp-body>
+</section>
+<!--Animación principal-->
+<!--METEORS-->
+<div id="js-meteor-block" class="ag-meteor-block"></div>
+<!--METEORS-->
+
+<!--WidgetChat Messenger debe estár ya en el dominio.-->
+<!-- <div class="fb-customerchat"
+     page_id="383134485192473">
+</div> -->

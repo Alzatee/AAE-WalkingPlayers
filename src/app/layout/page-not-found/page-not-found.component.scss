@@ -1,0 +1,303 @@
+.wp-page-not-found {
+  font-family: "VT323", sans-serif;
+  text-align: center;
+  background: linear-gradient(
+    45deg,
+    hsl(0, 0%, 0%) 10%,
+    hsl(303, 83%, 20%),
+    hsl(287, 76%, 40%),
+    hsl(263, 42%, 27%),
+    hsl(0, 0%, 0%)
+  );
+  background-size: 2000vw 100vh;
+  animation: animate-bg-pos-size 55s ease infinite;
+  overflow: hidden;
+  padding-top: 100px;
+}
+.wp-page-not-found h2,
+.wp-page-not-found h3 {
+  padding: 5px;
+  color: #f3f3f3;
+}
+.wp-page-not-found h2 {
+  font-size: 90px;
+}
+.wp-page-not-found .enderman {
+  animation: headRotate 4s infinite alternate forwards;
+  height: 40vh;
+  margin: 80px auto;
+  perspective: 800px;
+  perspective-origin: -30% 200px;
+  position: relative;
+  width: 200px;
+}
+
+/* HEAD */
+.wp-page-not-found .enderman .head {
+  background: black;
+  margin: 0 auto;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 150px;
+}
+.wp-page-not-found .enderman .head div {
+  height: 90px;
+  position: absolute;
+  width: 100px;
+  z-index: 100;
+}
+.wp-page-not-found .enderman .right {
+  background: black;
+  transform: rotateY(-270deg) translateX(0);
+  transform-origin: top right;
+}
+.wp-page-not-found .enderman .left {
+  background: black;
+  transform: rotateY(270deg) translateX(0);
+  transform-origin: center left;
+}
+.wp-page-not-found .enderman .bottom {
+  background: black;
+  transform: rotateX(90deg) translateY(100px);
+  transform-origin: bottom center;
+}
+.wp-page-not-found .enderman .front {
+  background: black;
+  transform: translateZ(100px);
+}
+.wp-page-not-found .enderman .right-eye {
+  background: lighten(#f769fa, 20%);
+  height: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 40px;
+
+  &::before {
+    background: lighten(#e500fd, 20%);
+    content: "";
+    height: 10px;
+    margin-left: -5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 10px;
+  }
+}
+.wp-page-not-found .enderman .left-eye {
+  background: lighten(#f769fa, 20%);
+  height: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 40px;
+
+  &::before {
+    background: lighten(#e500fd, 20%);
+    content: "";
+    height: 10px;
+    margin-left: -5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 10px;
+  }
+}
+
+/*BODY*/
+.wp-page-not-found .enderman .enderman-body {
+  background: black;
+  height: 150px;
+  position: absolute;
+  top: 85px;
+  left: 25px;
+  width: 120px;
+
+  &::before {
+    background: black;
+    content: "";
+    height: 20px;
+    margin-left: -40px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    width: 80px;
+  }
+}
+
+/*ARMS*/
+.wp-page-not-found .enderman .left-arm {
+  animation: leftArm 2s infinite alternate forwards;
+  background: black;
+  height: 400px;
+  position: absolute;
+  top: 85px;
+  left: -5px;
+  transform: rotate(5deg);
+  width: 25px;
+}
+.wp-page-not-found .enderman .right-arm {
+  animation: rightArm 2s infinite alternate backwards;
+  animation-delay: 1s;
+  background: black;
+  height: 400px;
+  position: absolute;
+  top: 85px;
+  right: 20px;
+  transform: rotate(-5deg);
+  width: 25px;
+}
+
+/*LEGS*/
+.wp-page-not-found .enderman .left-leg {
+  background: black;
+  box-shadow: -5px -5px 0 0 black;
+  height: 430px;
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  transform: rotate(-3deg);
+  width: 25px;
+  animation: rightLeg 0.15s infinite alternate backwards;
+  animation-delay: 1s;
+
+  &::after {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid black;
+    content: "";
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    transform: rotate(-35deg);
+    width: 0;
+  }
+}
+.wp-page-not-found .enderman .right-leg {
+  animation: rightLeg 0.15s infinite alternate backwards;
+  background: black;
+  box-shadow: -5px -5px 0 0 black;
+  height: 380px;
+  position: absolute;
+  top: 200px;
+  right: 70px;
+  transform: rotate(2deg);
+  width: 25px;
+
+  &::after {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid black;
+    content: "";
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    transform: rotate(-35deg);
+    width: 0;
+  }
+}
+
+/*ENDER DUST*/
+.wp-page-not-found .enderman .ender-dust {
+  height: 700px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+}
+.wp-page-not-found .enderman .particle {
+  animation: particle 0.65s infinite alternate forwards;
+  background: #b83dcd;
+  height: 20px;
+  list-style: none;
+  position: absolute;
+  width: 20px;
+}
+@for $i from 1 through 8 {
+  .particle:nth-child(#{$i}) {
+    $size: random(12px);
+    $color: random(10%);
+    $delay: random(2);
+    top: random(50px) - 1%;
+    left: random(100px) - 10%;
+    width: $size + px;
+    height: $size + px;
+    animation-delay: 0.8 * $i + s;
+    background: lighten(#b83dcd, $color);
+  }
+}
+
+/*ANIMATIONS*/
+@keyframes headRotate {
+  0% {
+    perspective-origin: -30% 150px;
+  }
+  50% {
+    perspective-origin: -60% 150px;
+  }
+  100% {
+    perspective-origin: 100% 150px;
+  }
+}
+@keyframes leftArm {
+  0% {
+    transform: translate(10px, 0px);
+  }
+  50% {
+    transform: translate(12px, 0px);
+  }
+  1000% {
+    transform: translate(10px, 0px);
+  }
+}
+@keyframes rightArm {
+  0% {
+    transform: translate(-10px, 0px);
+  }
+}
+
+@keyframes leftLeg {
+  0% {
+    top: 185px;
+  }
+}
+
+@keyframes rightLeg {
+  0% {
+    top: 190px;
+  }
+}
+@keyframes particle {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*BACKGROUND*/
+@keyframes animate-bg-pos-size {
+  0% {
+    background-position-x: 0%;
+  }
+  25% {
+    background-position-x: 100%;
+    background-size: 2000vw 2000vh;
+  }
+  50% {
+    background-position-y: 80%;
+    background-size: 100vw 2000vh;
+  }
+  75% {
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: 100vw 200vh;
+  }
+  100% {
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: 2000vw 100vh;
+  }
+}

@@ -1,0 +1,228 @@
+#fuse-splash-screen {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #21252c94;
+  pointer-events: auto;
+  z-index: 2000;
+}
+
+#fuse-splash-screen .center {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#fuse-splash-screen .logo {
+  padding-top: 30px;
+  width: auto;
+  margin: 0 auto;
+  animation: PulseImage 3s infinite;
+}
+
+#fuse-splash-screen .logo img {
+  width: 75px;
+  filter: drop-shadow(0px 10px 6px rgba(0, 0, 0, 0.2));
+  border-radius: 200px;
+}
+
+.loader {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-color: rgba(34, 47, 62, 0.5);
+  box-shadow: 0 0 24px 4px rgba(0, 174, 239, 0.2);
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border-radius: 50%;
+  background-image: radial-gradient(
+    circle,
+    transparent 68%,
+    rgba(0, 174, 239, 1) 70%
+  );
+  box-shadow: inset 0 0 0 0 rgba(0, 174, 239, 0);
+  animation: Glow 5s infinite ease-in-out;
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  transform-origin: 50% 50%;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  z-index: 999;
+  border: solid 2px #f3f3f3;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: Spin 1.5s infinite linear;
+}
+
+.loader-text {
+  display: block;
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #00aeef;
+  letter-spacing: 2px;
+  text-shadow: 0 0 24px rgba(0, 174, 239, 0.8);
+  animation: Pulse 5s infinite linear;
+}
+
+.loader-text::before {
+  content: attr(data-flicker-0);
+  position: absolute;
+  color: #00aeef;
+  opacity: 0;
+  text-shadow: 0 0 16px rgba(0, 174, 239, 0);
+  animation: Flicker 3s infinite linear;
+}
+
+.loader-text::after {
+  content: attr(data-flicker-1);
+  position: absolute;
+  right: 10px;
+  color: #00aeef;
+  opacity: 0;
+  text-shadow: 0 0 16px rgba(0, 174, 239, 0);
+  animation: Flicker 3s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes Glow {
+  50% {
+    box-shadow: inset 0 0 24px 4px rgba(0, 174, 239, 0.8);
+  }
+}
+
+@keyframes Spin {
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes Pulse {
+  50% {
+    color: rgba(0, 174, 239, 0.5);
+    text-shadow: 0 0 24px rgba(0, 174, 239, 0.4);
+  }
+}
+
+@keyframes Flicker {
+  0% {
+    opacity: 0.1;
+    color: #00aeef;
+    text-shadow: 0 0 16px rgba(0, 174, 239, 1);
+  }
+  2% {
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 24px rgba(0, 174, 239, 1);
+  }
+  6% {
+    opacity: 0.1;
+    color: #00aeef;
+    text-shadow: 0 0 8px rgba(0, 174, 239, 1);
+  }
+  12% {
+    opacity: 0.8;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0, 174, 239, 1);
+  }
+  14% {
+    opacity: 0.2;
+    color: #00aeef;
+    text-shadow: 0 0 8px rgba(0, 174, 239, 1);
+  }
+  30% {
+    opacity: 1;
+    color: #fff;
+    text-shadow: 0 0 16px rgba(0, 174, 239, 1);
+  }
+  36% {
+    opacity: 0.2;
+    color: #00aeef;
+    text-shadow: 0 0 24px rgba(0, 174, 239, 1);
+  }
+  60% {
+    opacity: 0.6;
+    text-shadow: 0 0 16px rgba(0, 174, 239, 1);
+  }
+  64% {
+    opacity: 0.8;
+    text-shadow: 0 0 18px rgba(0, 174, 239, 1);
+  }
+  68% {
+    opacity: 1;
+    text-shadow: 0 0 24px rgba(0, 174, 239, 1);
+  }
+  82% {
+    opacity: 0.2;
+    text-shadow: 0 0 16px rgba(0, 174, 239, 1);
+  }
+  84% {
+    opacity: 0.1;
+    text-shadow: 0 0 8px rgba(0, 174, 239, 1);
+  }
+  86% {
+    opacity: 0.6;
+    text-shadow: 0 0 12px rgba(0, 174, 239, 1);
+  }
+}
+
+@-webkit-keyframes PulseImage {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+@keyframes PulseImage {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}

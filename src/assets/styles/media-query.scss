@@ -1,0 +1,19 @@
+/* --- PHONES MEDIA QUERY --- */
+@media screen and (max-width: 767px) {
+  footer {
+    min-height: 700px !important;
+  }
+  .share-list a {
+    margin: 3px !important;
+  }
+}
+
+/* --- TABLES AND PHONES MEDIA QUERY --- */
+@media screen and (max-width: 768px) {
+  .menu-wp .conteiner-info-server {
+    display: block !important;
+  }
+}
+
+/* --- IPADS MEDIA QUERY --- */
+// @media screen and (max-width: 1024px){}
