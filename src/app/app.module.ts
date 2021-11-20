@@ -19,6 +19,7 @@ import { FacebookModule } from 'ngx-facebook';//Para chat o (eliminar) si no voy
 //Firebase Modules
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '@env/environment';
 
 
@@ -40,6 +41,7 @@ import { environment } from '@env/environment';
     FacebookModule.forRoot(),
     //Firebase Config Modules
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
     AngularFireAuthModule //Módulo de autentificación de Firebase.
   ],
   providers: [

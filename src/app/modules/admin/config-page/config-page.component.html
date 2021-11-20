@@ -1,1 +1,44 @@
-<p>config-page works!</p>
+<section class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            <form class="form-auth" [formGroup]="authForm" #formDirective="ngForm" (ngSubmit)="saveForm(authForm.value)"
+                novalidate>
+                <!--Form Elements-->
+                <mat-card>
+                    <mat-card-content>
+                        <div class="form-group">
+                            <mat-form-field class="mat-form-field">
+                                <mat-label>Terminos y condiciones</mat-label>
+                                <textarea type="text" matInput placeholder="termsAndConditions" id="termsAndConditions"
+                                    name="termsAndConditions" formControlName="termsAndConditions" required></textarea>
+                                <!-- <mat-error *ngIf="utilService.validarCampo('idTipoDocumento', crearTipoDocumentoFormulario)">
+                                            {{utilService.obtenerMensajeError('idTipoDocumento', crearTipoDocumentoFormulario)}}
+                                        </mat-error> -->
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+                            <mat-form-field class="mat-form-field">
+                                <mat-label>Sobre nosotros</mat-label>
+                                <textarea type="text" matInput placeholder="aboutUs" id="aboutUs" name="aboutUs"
+                                    formControlName="aboutUs" required></textarea>
+                                <!-- <mat-error *ngIf="utilService.validarCampo('idTipoDocumento', crearTipoDocumentoFormulario)">
+                                        {{utilService.obtenerMensajeError('idTipoDocumento', crearTipoDocumentoFormulario)}}
+                                    </mat-error> -->
+                            </mat-form-field>
+                        </div>
+
+                        <div class="row mt-3 mb-3 inputGroup inputGroup3">
+                            <div class="col-md-12">
+                                <button type="submit" mat-raised-button color="accent">
+                                    Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                <!--/Form Elements-->
+            </form>
+        </div>
+    </div>
+</section>

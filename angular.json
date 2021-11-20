@@ -38,6 +38,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/js/animated-mouse-images.js",
               "src/assets/js/home-animation.js",
               "src/assets/js/alzate-mini-games.js",
               "src/assets/js/login-animation.js"

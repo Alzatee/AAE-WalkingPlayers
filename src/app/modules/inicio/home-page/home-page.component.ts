@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '@env/environment.dev';
 import { UtilService } from '@shared/util.service';
+declare var $: any;
+
 declare const animationHomeParallax: any;
 declare const animationHomeMeteors: any;
 declare const animationMouseMoveImg: any;
@@ -24,5 +26,6 @@ export class HomePageComponent implements OnInit {
     this.utilService.showMenuAnimation();
     this.utilService.showMeteorsAnimation();
   }
+  
 
 }

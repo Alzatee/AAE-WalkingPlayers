@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FireStorageFunctionsService } from '@core/services/fire-storage-functions/fire-storage-functions.service';
 import { UtilService } from '@shared/util.service';
 import Swal from 'sweetalert2'
 
@@ -8,8 +9,10 @@ import Swal from 'sweetalert2'
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  informationWP: any;
   pageLink: string = window.location.href;
   pageTitle: string = String(document.title).replace(/\&/g, '%26');
+  sweetBackdrop: string = `rgba(0,0,0,.4) url("./assets/gif/modal-cat.gif") left top no-repeat`;
 
   modalSharedCss: string = `
     <style>
@@ -46,23 +49,43 @@ export class FooterComponent implements OnInit {
   </div>
 `;
 
-  constructor(public utilService: UtilService) { }
+  constructor(
+    public utilService: UtilService,
+    private fireStorageFunctions: FireStorageFunctionsService
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getInformationWP();
+  }
 
-  sharedPage() {
+  getInformationWP(): void {
+    this.fireStorageFunctions.getInformationWP().then(response => {
+      this.informationWP = response;
+    });
+  }
+
+  openTermsAndConditionsModal(): void {
+    Swal.fire({
+      html: this.informationWP.termsAndConditions,
+      backdrop: this.sweetBackdrop
+    });
+  }
+
+  openAboutUs(): void {
+    Swal.fire({
+      html: this.informationWP.aboutUs,
+      backdrop: this.sweetBackdrop
+    });
+  }
+
+  sharedPage(): void {
     Swal.fire({
       title: 'Compartir',
       html: `
         ${this.modalSharedCss}
         ${this.modalSharedHtml}
       `,
-      backdrop: `
-        rgba(0,0,0,.4)
-        url("./assets/gif/modal-cat.gif")
-        left top
-        no-repeat
-      `
+      backdrop: this.sweetBackdrop
     });
   }
 
