@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '@core/services/auth/auth.service';
+declare const loginAnimation: any;
 
 @Component({
   selector: 'wp-auth-form',
@@ -23,6 +24,7 @@ export class AuthFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    loginAnimation();
     console.log(this.action);
   }
 
@@ -34,25 +36,29 @@ export class AuthFormComponent implements OnInit {
   }
 
   registerEmail(): void {
-    console.log(this.authForm.value);
+    console.log(this.authForm.value);///*
     this.authService.registerEmail(this.authForm.value.email, this.authForm.value.password).then(response => {
-      console.log('Se registró', response);
+      console.log('Se registró', response);///*
     });
   }
 
   loginWithEmail(): void {
-    console.log(this.authForm.value);
+    console.log(this.authForm.value);///*
     this.authService.loginWithEmail(this.authForm.value.email, this.authForm.value.password).then(response => {
-      console.log('Inicio de sesión por email', response);
-      this._router.navigate(['/home']);
+      if (response) {
+        console.log('Inicio de sesión por email', response);///*
+        this._router.navigate(['/home']);
+      }
     });
   }
 
   loginWithGoogle(): void {
-    console.log(this.authForm.value);
+    console.log(this.authForm.value);///*
     this.authService.loginWithGoogle().then(response => {
-      console.log('Inicio de sesión por google', response);
-      this._router.navigate(['/home']);
+      if (response) {
+        console.log('Inicio de sesión por google', response);///*
+        this._router.navigate(['/home']);
+      }
     });
   }
 

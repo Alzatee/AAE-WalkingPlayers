@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,12 @@ export class AuthGuard implements CanActivate {
     const isAuthenticated = user ? true : false;
 
     if (!isAuthenticated) {
-      console.log('No tiene acceso a esta página, requiere de autentificación');
-      alert('No estás logueado/autorizado para entrar a este módulo!');
+      console.log('Acceso denegado');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Acceso denegado',
+        text: 'No tienes la autorización para acceder a este módulo.'
+      });
     }
 
     return isAuthenticated;

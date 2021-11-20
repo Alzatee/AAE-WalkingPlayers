@@ -23,6 +23,8 @@ export class AaeBlockNinjaComponent implements OnInit {
     hideMenu();
     this.utilService.hideMenuAnimation();
     this.utilService.hideMeteorsAnimation();
+    let containerRouter: any = document.getElementById("container-router");
+    containerRouter.style.paddingTop = "0px";
   }
 
   leaveGame() {

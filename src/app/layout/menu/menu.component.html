@@ -50,16 +50,23 @@
                     <li *ngIf="infoLoggedOnUser|async as user" class="nav-item">
                         <a class="nav-link" [routerLink]="['/admin/config-page']">Configuración</a>
                     </li>
-
-                    <li *ngIf="infoLoggedOnUser|async as user" class="nav-item">
-                        <a class="nav-link" href="#" (click)="logout()">Logout</a>
-                    </li>
                     <!--/ADMINISTRADORES-->
                 </ul>
                 <div *ngIf="walkingPlayersInformationMinecraft" class="conteiner-info-server justify-content-end">
-                    <div *ngIf="infoLoggedOnUser|async as user" class="logged-on-user">
-                        <span style="color: white;">{{user.email}}</span>
-                    </div>
+
+                    <ul class="navbar-nav p-1">
+                        <li *ngIf="infoLoggedOnUser|async as user" class="nav-item dropdown" ngbDropdown>
+                            <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                                {{user.email}}
+                            </a>
+                            <ul class="dropdown-menu p-2" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" (click)="logout()">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                     
                     <!--Icon Minecraft 3d AAE-->
                     <div class="icon-minecraft-3d">

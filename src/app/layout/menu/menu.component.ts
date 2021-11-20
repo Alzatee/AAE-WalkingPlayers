@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from '@env/environment';
 import { CommonService } from '@core/services/common/common.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { UtilService } from '@shared/util.service';
 import { AuthService } from '@core/services/auth/auth.service';
 declare const menuAnimationScroll: any;
