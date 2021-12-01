@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CInformationWP } from '@core/class/information-wp';
 import { FireStorageFunctionsService } from '@core/services/fire-storage-functions/fire-storage-functions.service';
 import { UtilService } from '@shared/util.service';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'wp-config-page',
@@ -12,6 +13,35 @@ import { UtilService } from '@shared/util.service';
 export class ConfigPageComponent implements OnInit {
   authForm: FormGroup;
   informationWP: any;
+
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    maxHeight: 'auto',
+    width: 'auto',
+    minWidth: '0',
+    translate: 'yes',
+    enableToolbar: true,
+    showToolbar: true,
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Roboto',
+    fonts: [
+      { class: 'font-roboto', name: 'Roboto' },
+      { class: 'font-lato', name: 'Lato' },
+      { class: 'arial', name: 'Arial' },
+      { class: 'times-new-roman', name: 'Times New Roman' },
+      { class: 'calibri', name: 'Calibri' }
+    ],
+    customClasses: [
+      {
+        name: 'Tabla',
+        class: '<!--',
+        tag: 'table class="table table-bordered"><tr><td>contenido</td><td>contenido</td></tr></table> <!-- '
+      }
+    ]
+  };
 
   constructor(
     private utilService: UtilService,
@@ -31,7 +61,8 @@ export class ConfigPageComponent implements OnInit {
   validatedForm() {
     this.authForm = this.formBuilder.group({
       termsAndConditions: [null, Validators.required],
-      aboutUs: [null, Validators.required]
+      aboutUs: [null, Validators.required],
+      rules: [null, Validators.required],
     });
   }
 
@@ -42,7 +73,8 @@ export class ConfigPageComponent implements OnInit {
       //Set values Form
       this.authForm.patchValue({
         termsAndConditions: this.informationWP.termsAndConditions,
-        aboutUs: this.informationWP.aboutUs
+        aboutUs: this.informationWP.aboutUs,
+        rules: this.informationWP.rules
       });
 
       console.log('respuesta del servicio de información WP', this.informationWP);
@@ -53,6 +85,7 @@ export class ConfigPageComponent implements OnInit {
     const formValue = new CInformationWP();
     formValue.termsAndConditions = authForm.termsAndConditions;
     formValue.aboutUs = authForm.aboutUs;
+    formValue.rules = authForm.rules;
     formValue.idDocument = this.informationWP.idDocument;
     this.fireStorageFunctions.updateInformationWP(formValue, formValue.idDocument);
   }

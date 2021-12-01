@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UtilService } from '@shared/util.service';
 declare const playAlzaNinjaMinigame: any;
@@ -10,12 +10,14 @@ declare const showMenu: any;
   templateUrl: './aae-block-ninja.component.html',
   styleUrls: ['./aae-block-ninja.component.scss']
 })
-export class AaeBlockNinjaComponent implements OnInit {
+export class AaeBlockNinjaComponent implements OnInit, OnDestroy {
 
   constructor(
     private utilService: UtilService,
     private _router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    //Destruir este componente y sus animaciones al cambiar de ruta o al ir a otro
+    private elementRef: ElementRef
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +34,10 @@ export class AaeBlockNinjaComponent implements OnInit {
     //Destruir componentes para remover javascript de juego y redireccionar al inicio. Recarga silenciosa interna.
     this._router.routeReuseStrategy.shouldReuseRoute = () => false;
     this._router.navigate(['/home']);
+  }
+
+  ngOnDestroy() {
+    this.elementRef.nativeElement.remove();
   }
 
 }

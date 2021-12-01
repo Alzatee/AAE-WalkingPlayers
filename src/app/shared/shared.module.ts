@@ -8,6 +8,7 @@ import { AuthFormComponent } from './components/auth-form/auth-form.component';
 
 //Modules
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 /*Componentes de Angular Material*/
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -36,7 +37,8 @@ const materialModules = [
         CommonModule,
         materialModules,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AngularEditorModule
     ],
     exports: [
         CommonModule,
@@ -46,7 +48,8 @@ const materialModules = [
         ModalLoadComponent,
         AuthFormComponent,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AngularEditorModule
     ]
 })
 

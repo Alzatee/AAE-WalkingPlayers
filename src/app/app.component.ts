@@ -3,6 +3,7 @@ import { FacebookService, InitParams } from 'ngx-facebook';
 import { environment } from '@env/environment';
 import { ModalLoadServicesService } from '@core/services/modal-load-services/modal-load-services.service';
 import { timer } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wp-root',
@@ -15,8 +16,9 @@ export class AppComponent implements OnInit {
 
   constructor(
     private facebookService: FacebookService,
-    public modalLoadServicesService: ModalLoadServicesService
-    ) { }
+    public modalLoadServicesService: ModalLoadServicesService,
+    private _router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.initFacebookService();
@@ -26,4 +28,5 @@ export class AppComponent implements OnInit {
     const initParams: InitParams = { xfbml: true, version: 'v3.2' };
     this.facebookService.init(initParams);
   }
+
 }

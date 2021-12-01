@@ -67,18 +67,28 @@ export class FooterComponent implements OnInit {
   openTermsAndConditionsModal(): void {
     Swal.fire({
       html: this.informationWP.termsAndConditions,
-      backdrop: this.sweetBackdrop
+      backdrop: this.sweetBackdrop,
+      width: 1000
     });
   }
 
-  openAboutUs(): void {
+  openAboutUsModal(): void {
     Swal.fire({
       html: this.informationWP.aboutUs,
-      backdrop: this.sweetBackdrop
+      backdrop: this.sweetBackdrop,
+      width: 1000
     });
   }
 
-  sharedPage(): void {
+  openRulesModal(): void {
+    Swal.fire({
+      html: this.informationWP.rules,
+      backdrop: this.sweetBackdrop,
+      width: 1000
+    });
+  }
+
+  sharedPageModal(): void {
     Swal.fire({
       title: 'Compartir',
       html: `

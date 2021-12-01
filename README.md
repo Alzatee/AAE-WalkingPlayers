@@ -37,7 +37,7 @@ $ ng build
 | QA INTERGRUPO | `ng build --configuration qa` |
 | PRODUCCIÓN | `ng build --configuration production`|
 
-## Styles
+## Stilos y dependencias:
 Sass (Sintax Scss).
 [Reference docs](https://sass-lang.com/documentation).
 Animate.css
@@ -56,6 +56,9 @@ Firebase Google
 [Firebase Google:](https://firebase.google.com/docs)
 https://console.firebase.google.com/project/aae-walkingplayers
 Base de datos de: alzat3e@gmail.com
+
+Textarea editor
+[kolkovTextareaEditor](https://www.npmjs.com/package/@kolkov/angular-editor);
 
 # ANGULAR README
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.

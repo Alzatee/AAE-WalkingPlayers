@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '@core/services/auth/auth.service';
 declare const loginAnimation: any;
 
@@ -12,12 +12,12 @@ declare const loginAnimation: any;
 export class AuthFormComponent implements OnInit {
   authForm: FormGroup;
   @Input() action: string = '';
+  titleComponent: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private _router: Router,
-    private route: ActivatedRoute
   ) {
     this.authForm = this.formBuilder.group({});
     this.validatedForm();
@@ -25,7 +25,7 @@ export class AuthFormComponent implements OnInit {
 
   ngOnInit(): void {
     loginAnimation();
-    console.log(this.action);
+    this.titleComponent = this.action == 'login' ? 'Iniciar sesión' : 'Registrar Usuario';
   }
 
   validatedForm() {
