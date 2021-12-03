@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import firebase from '@firebase/app-compat';
+import { timer } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Injectable({
@@ -8,7 +10,10 @@ import Swal from 'sweetalert2';
 })
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(
+    private afAuth: AngularFireAuth,
+    private _router: Router,
+  ) { }
 
   async registerEmail(email: string, password: string): Promise<any> {
     try {
@@ -73,12 +78,15 @@ export class AuthService {
   }
 
   logout() {
+    this._router.navigate(['/home']);
     this.afAuth.signOut();
-    Swal.fire({
-      icon: 'success',
-      html: `<p>Sesión cerrada</p>`,
-      showConfirmButton: false,
-      timer: 1500
+    timer(500).subscribe(() => {
+      Swal.fire({
+        icon: 'success',
+        html: `<p>Sesión cerrada</p>`,
+        showConfirmButton: false,
+        timer: 2000
+      });
     });
   }
 

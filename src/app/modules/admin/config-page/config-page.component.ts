@@ -20,11 +20,10 @@ export class ConfigPageComponent implements OnInit {
     height: '15rem',
     minHeight: '5rem',
     maxHeight: 'auto',
-    width: 'auto',
-    minWidth: '0',
     translate: 'yes',
     enableToolbar: true,
     showToolbar: true,
+    sanitize: false,
     defaultParagraphSeparator: 'p',
     defaultFontName: 'Roboto',
     fonts: [

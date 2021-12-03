@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FacebookService, InitParams } from 'ngx-facebook';
 import { environment } from '@env/environment';
 import { ModalLoadServicesService } from '@core/services/modal-load-services/modal-load-services.service';
-import { timer } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'wp-root',
@@ -16,8 +14,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private facebookService: FacebookService,
-    public modalLoadServicesService: ModalLoadServicesService,
-    private _router: Router,
+    public modalLoadServicesService: ModalLoadServicesService
   ) { }
 
   ngOnInit(): void {
