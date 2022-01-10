@@ -1,0 +1,90 @@
+/* METEORS */
+.ag-meteor-block {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.ag-meteor-block,
+.meteor__item {
+  position: absolute;
+}
+
+.meteor__item-img {
+  width: 600px;
+  height: 600px;
+  background-image: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/parallax-space/images/meteors-sprite.png);
+  background-size: auto 100%;
+
+  -webkit-animation: an-frame-animation 3s steps(48) infinite;
+  -moz-animation: an-frame-animation 3s steps(48) infinite;
+  -o-animation: an-frame-animation 3s steps(48) infinite;
+  animation: an-frame-animation 3s steps(48) infinite;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@-webkit-keyframes an-frame-animation {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -28800px 0;
+  }
+}
+
+@-moz-keyframes an-frame-animation {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -28800px 0;
+  }
+}
+
+@-o-keyframes an-frame-animation {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -28800px 0;
+  }
+}
+
+@keyframes an-frame-animation {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -28800px 0;
+  }
+}
+
+/* METEORS MEDIA QUERY */
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .ag-format-container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1161px) {
+  .ag-format-container {
+    width: 960px;
+  }
+}
