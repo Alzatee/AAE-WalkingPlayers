@@ -65,6 +65,7 @@ Textarea editor
 [FIREBASE-DB](Base de datos Firebase de Alzate con el gmail alzat3e@gmail.com [privado])
 
 # ANGULAR README
+Subir a gh-pages: https://www.youtube.com/watch?v=lM4A6SBK1uQ
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
 
 ## Development server
