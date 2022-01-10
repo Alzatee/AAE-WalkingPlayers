@@ -59,13 +59,16 @@ Firebase Google
 Textarea editor
 [kolkovTextareaEditor](https://www.npmjs.com/package/@kolkov/angular-editor);
 
+GitHub Pages Angular
+Subir a gh-pages: https://www.youtube.com/watch?v=lM4A6SBK1uQ
+[angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages)
+
 # ADMINISTRACIÓN
 [Admin-login](Puede loguearse como administrador en la ruta dominio/#/admin/login)
 [Admin-registrar-admin](Puede registrarse un nuevo administrador en la ruta)
 [FIREBASE-DB](Base de datos Firebase de Alzate con el gmail alzat3e@gmail.com [privado])
 
 # ANGULAR README
-Subir a gh-pages: https://www.youtube.com/watch?v=lM4A6SBK1uQ
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
 
 ## Development server
