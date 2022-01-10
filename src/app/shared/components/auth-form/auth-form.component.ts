@@ -36,30 +36,26 @@ export class AuthFormComponent implements OnInit {
   }
 
   registerEmail(): void {
-    console.log(this.authForm.value);///*
     this.authService.registerEmail(this.authForm.value.email, this.authForm.value.password).then(response => {
-      console.log('Se registró', response);///*
     });
   }
 
   loginWithEmail(): void {
-    console.log(this.authForm.value);///*
     this.authService.loginWithEmail(this.authForm.value.email, this.authForm.value.password).then(response => {
       if (response) {
-        console.log('Inicio de sesión por email', response);///*
         this._router.navigate(['/home']);
       }
     });
   }
 
-  loginWithGoogle(): void {
-    console.log(this.authForm.value);///*
-    this.authService.loginWithGoogle().then(response => {
-      if (response) {
-        console.log('Inicio de sesión por google', response);///*
-        this._router.navigate(['/home']);
-      }
-    });
-  }
+  // loginWithGoogle(): void {
+  //   console.log(this.authForm.value);///*
+  //   this.authService.loginWithGoogle().then(response => {
+  //     if (response) {
+  //       console.log('Inicio de sesión por google', response);///*
+  //       this._router.navigate(['/home']);
+  //     }
+  //   });
+  // }
 
 }

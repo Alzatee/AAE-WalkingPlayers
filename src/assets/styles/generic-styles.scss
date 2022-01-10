@@ -20,7 +20,7 @@ body {
 
 iframe {
   width: 100%;
-  height: 89vh;
+  height: 80vh;
 }
 
 .row {
@@ -49,7 +49,6 @@ iframe {
   width: 80px;
   height: 80px;
   transition: 0.3s;
-  
 }
 .menu-wp .logo-container .logo-wp {
   width: 80px;
@@ -90,4 +89,13 @@ iframe {
 .navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item:hover {
   background-color: #00000045;
   color: $color-light-gray;
+}
+
+//SweetAlert
+.swal2-container.swal2-center > .swal2-popup {
+  display: grid;
+  max-height: 95vh !important;
+  overflow: hidden;
+  overflow-y: auto;
+  max-width: 100%;
 }

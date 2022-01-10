@@ -9,11 +9,11 @@ import Swal from 'sweetalert2'
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  currentYear = new Date().getFullYear();
   informationWP: any;
   pageLink: string = window.location.href;
   pageTitle: string = String(document.title).replace(/\&/g, '%26');
   sweetBackdrop: string = `rgba(0,0,0,.4) url("./assets/gif/modal-cat.gif") left top no-repeat`;
-
   modalSharedCss: string = `
     <style>
       .share-list {display: flex; flex-direction: row;}
@@ -68,7 +68,8 @@ export class FooterComponent implements OnInit {
     Swal.fire({
       html: this.informationWP.termsAndConditions,
       backdrop: this.sweetBackdrop,
-      width: 1000
+      width: 1000,
+      confirmButtonText: 'Entendido'
     });
   }
 
@@ -76,7 +77,8 @@ export class FooterComponent implements OnInit {
     Swal.fire({
       html: this.informationWP.aboutUs,
       backdrop: this.sweetBackdrop,
-      width: 1000
+      width: 1000,
+      confirmButtonText: 'Entendido'
     });
   }
 
@@ -84,7 +86,8 @@ export class FooterComponent implements OnInit {
     Swal.fire({
       html: this.informationWP.rules,
       backdrop: this.sweetBackdrop,
-      width: 1000
+      width: 1000,
+      confirmButtonText: 'Entendido'
     });
   }
 
@@ -95,7 +98,8 @@ export class FooterComponent implements OnInit {
         ${this.modalSharedCss}
         ${this.modalSharedHtml}
       `,
-      backdrop: this.sweetBackdrop
+      backdrop: this.sweetBackdrop,
+      confirmButtonText: 'Entendido'
     });
   }
 

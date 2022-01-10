@@ -1,7 +1,7 @@
 <!-- Game canvas -->
 <!-- The video -->
 <video autoplay muted loop id="myVideo">
-    <source src="./assets/Images/mini-games/alza-ninja-bg.mp4" type="video/mp4">
+    <source src="./assets/video/mini-games/alza-ninja-bg.mp4" type="video/mp4">
 </video>
 
 <canvas id="c"></canvas>
@@ -24,23 +24,33 @@
 <div class="menus">
     <div class="menu menu--main">
         <h1>⚔️ ALZA NINJA ⚔️</h1>
-        <button type="button" class="play-normal-btn">INICIAR JUEGO</button>
-        <button type="button" class="play-casual-btn">MODO CASUAL</button>
-        <button type="button" class="play-normal-btn" (click)="leaveGame();">SALIR DEL JUEGO</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="play-normal-btn">INICIAR JUEGO</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="play-casual-btn">MODO CASUAL</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="play-normal-btn" (click)="leaveGame();">SALIR DEL JUEGO</button>
     </div>
     <div class="menu menu--pause">
         <h1>Pausa</h1>
-        <button type="button" class="resume-btn">VOLVER AL JUEGO</button>
-        <button type="button" class="menu-btn--pause">MENÚ PRINCIPAL</button>
-        <button type="button" class="play-normal-btn" (click)="leaveGame();">SALIR DEL JUEGO</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="resume-btn">VOLVER AL JUEGO</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="menu-btn--pause">MENÚ PRINCIPAL</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="play-normal-btn" (click)="leaveGame();">SALIR DEL JUEGO</button>
     </div>
     <div class="menu menu--score">
         <h1>Fin del juego!</h1>
         <h2>Tu puntaje:</h2>
         <div class="final-score-lbl"></div>
         <div class="high-score-lbl"></div>
-        <button type="button" class="play-again-btn">JUGAR DE NUEVO</button>
-        <button type="button" class="menu-btn--score">MENÚ PRINCIPAL</button>
-        <button type="button" class="play-normal-btn" (click)="leaveGame();">SALIR DEL JUEGO</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="play-again-btn">JUGAR DE NUEVO</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="menu-btn--score">MENÚ PRINCIPAL</button>
+        <button id="btn-game" (click)="playButtonSound()" type="button" class="play-normal-btn" (click)="leaveGame();">SALIR DEL JUEGO</button>
     </div>
 </div>
+
+<!--Sounds in game-->
+<audio id="start-game-sound" src="./assets/sounds/start-game-sound.wav" preload="auto"></audio>
+<audio id="reset-game-sound" src="./assets/sounds/reset-game-sound.wav" preload="auto"></audio>
+<audio id="katana-sound" src="./assets/sounds/katana-sound.wav" preload="auto"></audio>
+<audio id="cube-destruction" src="./assets/sounds/cube-destruction.mp3" preload="auto"></audio>
+<audio id="power-up-sound" src="./assets/sounds/power-up-sound.mp3" preload="auto"></audio>
+<audio id="game-over-sound" src="./assets/sounds/game-over-sound.wav" preload="auto"></audio>
+<audio id="pause-sound" src="./assets/sounds/pause-sound.wav" preload="auto"></audio>
+<audio id="resume-game-sound" src="./assets/sounds/resume-game-sound.wav" preload="auto"></audio>

@@ -21,12 +21,13 @@ export class AuthGuard implements CanActivate {
           resolve(true);
         } else {
           resolve(false);
-          console.log('Acceso denegado');
+          console.log('%c ¡Acceso denegado para el público!', 'color: #ed5565');
           this._router.navigate(['/home']);
           Swal.fire({
             icon: 'warning',
             title: 'Acceso denegado',
-            text: 'No tienes la autorización para acceder a este módulo.'
+            text: 'No tienes la autorización para acceder a este módulo.',
+            confirmButtonText: 'Entendido'
           });
         }
       });

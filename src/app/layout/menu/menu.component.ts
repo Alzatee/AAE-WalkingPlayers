@@ -34,14 +34,19 @@ export class MenuComponent implements OnInit {
     this.commonService.walkingPlayersInformationMinecraft()
       .subscribe((result: any) => {
         this.walkingPlayersInformationMinecraft = result;
-        console.log(result);
       }, (error: HttpErrorResponse) => {
         console.log(error);
-        Swal.fire({
-          icon: 'error',
-          title: error.name,
-          text: error.message
-        });
+        this.getWalkingPlayersInformationMinecraftDummie();
+      });
+  }
+
+
+  getWalkingPlayersInformationMinecraftDummie(): void {
+    this.commonService.walkingPlayersInformationMinecraftDummie()
+      .subscribe((result: any) => {
+        this.walkingPlayersInformationMinecraft = result;
+      }, (error: HttpErrorResponse) => {
+        console.log(error);
       });
   }
 

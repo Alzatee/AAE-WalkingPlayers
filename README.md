@@ -54,11 +54,15 @@ Icons
 
 Firebase Google
 [Firebase Google:](https://firebase.google.com/docs)
-https://console.firebase.google.com/project/aae-walkingplayers
-Base de datos de: alzat3e@gmail.com
+[FIREBASE-DB](Base de datos Firebase de Alzate con el gmail alzat3e@gmail.com [privado])
 
 Textarea editor
 [kolkovTextareaEditor](https://www.npmjs.com/package/@kolkov/angular-editor);
+
+# ADMINISTRACIÓN
+[Admin-login](Puede loguearse como administrador en la ruta dominio/#/admin/login)
+[Admin-registrar-admin](Puede registrarse un nuevo administrador en la ruta)
+[FIREBASE-DB](Base de datos Firebase de Alzate con el gmail alzat3e@gmail.com [privado])
 
 # ANGULAR README
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.

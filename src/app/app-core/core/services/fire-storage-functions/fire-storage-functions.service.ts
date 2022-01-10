@@ -18,14 +18,20 @@ export class FireStorageFunctionsService {
       aboutUs: dataWP.aboutUs,
       rules: dataWP.rules
     }).then(response => {
-      console.log(response);
       Swal.fire({
         icon: 'success',
         title: 'Información del servidor',
-        text: 'Los datos se actualizaron exitosamente'
+        text: 'Los datos se actualizaron exitosamente',
+        confirmButtonText: 'Entendido'
       });
     }).catch((error) => {
       console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Información del servidor',
+        text: error,
+        confirmButtonText: 'Entendido'
+      });
     })
   }
 

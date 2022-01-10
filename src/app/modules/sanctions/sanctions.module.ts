@@ -5,6 +5,7 @@ import { BansComponent } from './bans/bans.component';
 import { MutesComponent } from './mutes/mutes.component';
 import { WarningsComponent } from './warnings/warnings.component';
 import { KicksComponent } from './kicks/kicks.component';
+import { BackButtonComponent } from './shared/components/back-button/back-button.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { KicksComponent } from './kicks/kicks.component';
     BansComponent,
     MutesComponent,
     WarningsComponent,
-    KicksComponent
+    KicksComponent,
+    BackButtonComponent
   ],
   imports: [
     SharedModule,

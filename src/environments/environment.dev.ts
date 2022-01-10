@@ -7,8 +7,8 @@ export const environment = {
         warnings: 'https://walkingplayers.net/control/warnings.php',
         kicks: 'https://walkingplayers.net/control/kicks.php'
     },
-    urlShopWalkingPlayers: 'https://walkingplayers.tebex.io/',
-    urlShopNewsWalkingPlayers: 'https://walkingplayers.tebex.io/category/edicion-limitada',
+    urlShopWalkingPlayers: 'https://tienda.walkingplayers.net/',
+    urlShopNewsWalkingPlayers: 'https://tienda.walkingplayers.net/category/edicion-limitada',
 
     //FIREBASE
     firebaseConfig: {

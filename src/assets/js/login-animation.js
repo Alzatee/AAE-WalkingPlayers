@@ -18,14 +18,14 @@ function loginAnimation() {
         span.textContent = email.value.substr(carPos) || '.';
         div.appendChild(span);
 
-        emailCoords = getPosition(email);							//console.log("emailCoords.x: " + emailCoords.x + ", emailCoords.y: " + emailCoords.y);
-        caretCoords = getPosition(span);							//console.log("caretCoords.x " + caretCoords.x + ", caretCoords.y: " + caretCoords.y);
-        centerCoords = getPosition(mySVG);							//console.log("centerCoords.x: " + centerCoords.x);
+        emailCoords = getPosition(email);						
+        caretCoords = getPosition(span);						
+        centerCoords = getPosition(mySVG);						
         svgCoords = getPosition(mySVG);
-        screenCenter = centerCoords.x + (mySVG.offsetWidth / 2);		//console.log("screenCenter: " + screenCenter);
-        caretPos = caretCoords.x + emailCoords.x;					//console.log("caretPos: " + caretPos);
+        screenCenter = centerCoords.x + (mySVG.offsetWidth / 2);	
+        caretPos = caretCoords.x + emailCoords.x;				
 
-        dFromC = screenCenter - caretPos; 							//console.log("dFromC: " + dFromC);
+        dFromC = screenCenter - caretPos; 						
         var pFromC = Math.round((caretPos / screenCenter) * 100) / 100;
         if (pFromC < 1) {
 

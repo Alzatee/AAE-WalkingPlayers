@@ -6,6 +6,11 @@
   .share-list a {
     margin: 3px !important;
   }
+  iframe {
+    width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+  }
 }
 
 /* --- TABLES AND PHONES MEDIA QUERY --- */

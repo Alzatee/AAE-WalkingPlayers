@@ -8,12 +8,12 @@ export class CommonService {
 
   constructor(private http: HttpClient) { }
 
-  // walkingPlayersInformationMinecraft(): any {
-  //   return this.http.get<any>(`https://api.mcsrvstat.us/2/mc.walkingplayers.net`);
-  // }
-
-  //Temporal dummi antes de desplegar cambiar al original, se dejará consumir en el dominio walkingplayers.net
   walkingPlayersInformationMinecraft(): any {
+    return this.http.get<any>(`https://api.mcsrvstat.us/2/mc.walkingplayers.net`);
+  }
+
+  //Respaldo por si falla el servicio principal
+  walkingPlayersInformationMinecraftDummie(): any {
     return this.http.get<any>(`./assets/dummies-services/walking-player-minecraft-info.json`);
   }
 }

@@ -29,6 +29,7 @@ export class ConfigPageComponent implements OnInit {
     fonts: [
       { class: 'font-roboto', name: 'Roboto' },
       { class: 'font-lato', name: 'Lato' },
+      { class: 'font-amatic-sc', name: 'Amatic SC' },
       { class: 'arial', name: 'Arial' },
       { class: 'times-new-roman', name: 'Times New Roman' },
       { class: 'calibri', name: 'Calibri' }
@@ -75,8 +76,6 @@ export class ConfigPageComponent implements OnInit {
         aboutUs: this.informationWP.aboutUs,
         rules: this.informationWP.rules
       });
-
-      console.log('respuesta del servicio de información WP', this.informationWP);
     });
   }
 

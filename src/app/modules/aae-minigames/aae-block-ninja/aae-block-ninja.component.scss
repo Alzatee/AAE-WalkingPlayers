@@ -76,7 +76,8 @@
 }
 
 .slowmo::before {
-  content: url('/assets/Images/footer/logo-AlzateEA.ico') "Alzate te otorgó adrenalina!";
+  content: url("/assets/Images/footer/logo-AlzateEA.ico")
+    "Alzate te otorgó adrenalina!";
   display: block;
   font-size: calc(8px + 1vw + 0.5vh);
   margin-left: 0.5em;

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { UtilService } from '@shared/util.service';
 declare const playAlzaNinjaMinigame: any;
 declare const hideMenu: any;
@@ -15,10 +15,9 @@ export class AaeBlockNinjaComponent implements OnInit, OnDestroy {
   constructor(
     private utilService: UtilService,
     private _router: Router,
-    private route: ActivatedRoute,
     //Destruir este componente y sus animaciones al cambiar de ruta o al ir a otro
     private elementRef: ElementRef
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     playAlzaNinjaMinigame();
@@ -38,6 +37,14 @@ export class AaeBlockNinjaComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.elementRef.nativeElement.remove();
+    this.leaveGame();
+  }
+
+  playButtonSound(): void {
+    let audio = new Audio();
+    audio.src = './assets/sounds/select-button-sound.wav';
+    audio.load();
+    audio.play();
   }
 
 }

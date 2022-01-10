@@ -1456,10 +1456,12 @@ function playAlzaNinjaMinigame() {
     //////////////////
 
     function setGameMode(mode) {
+        document.getElementById('start-game-sound').play();
         state.game.mode = mode;
     }
 
     function resetGame() {
+        document.getElementById('reset-game-sound').play();
         resetAllTargets();
         state.game.time = 0;
         resetAllCooldowns();
@@ -1469,14 +1471,17 @@ function playAlzaNinjaMinigame() {
     }
 
     function pauseGame() {
+        document.getElementById('pause-sound').play();
         isInGame() && setActiveMenu(MENU_PAUSE);
     }
 
     function resumeGame() {
+        document.getElementById('resume-game-sound').play();
         isPaused() && setActiveMenu(null);
     }
 
     function endGame() {
+        document.getElementById('game-over-sound').play();
         handleCanvasPointerUp();
         if (isNewHighScore()) {
             setHighScore(state.game.score);
@@ -1512,7 +1517,7 @@ function playAlzaNinjaMinigame() {
     const pointerDeltaScaled = { x: 0, y: 0 };
 
     // Temp slowmo state. Should be relocated once this stabilizes.
-    const slowmoDuration = 1500;
+    const slowmoDuration = 3000;
     let slowmoRemaining = 0;
     let spawnExtra = 0;
     const spawnExtraDelay = 300;
@@ -1563,6 +1568,7 @@ function playAlzaNinjaMinigame() {
         const lastPointer = touchPoints[touchPoints.length - 1];
 
         if (pointerIsDown && lastPointer && !lastPointer.touchBreak) {
+            document.getElementById('katana-sound').play();
             pointerDelta.x = (pointerScene.x - lastPointer.x);
             pointerDelta.y = (pointerScene.y - lastPointer.y);
             pointerDeltaScaled.x = pointerDelta.x * forceMultiplier;
@@ -1694,10 +1700,12 @@ function playAlzaNinjaMinigame() {
                             incrementScore(10);
 
                             if (target.health <= 0) {
+                                document.getElementById('cube-destruction').play();
                                 incrementCubeCount(1);
                                 createBurst(target, forceMultiplier);
                                 sparkBurst(hitX, hitY, 8, sparkSpeed);
                                 if (target.wireframe) {
+                                    document.getElementById('power-up-sound').play();
                                     slowmoRemaining = slowmoDuration;
                                     spawnTime = 0;
                                     spawnExtra = 2;
@@ -1992,6 +2000,7 @@ function playAlzaNinjaMinigame() {
             const current = touchPoints[i];
             const prev = touchPoints[i - 1];
             if (current.touchBreak || prev.touchBreak) {
+                document.getElementById('katana-sound').play();
                 continue;
             }
             const scale = current.life / touchPointLife;
