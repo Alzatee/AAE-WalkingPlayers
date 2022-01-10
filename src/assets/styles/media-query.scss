@@ -11,6 +11,13 @@
     max-height: 100vh;
     height: 100vh;
   }
+  .swal2-container.swal2-center > .swal2-popup {
+    display: grid;
+    max-height: none !important;
+    overflow: none;
+    overflow-y: none;
+    max-width: 100%;
+  }
 }
 
 /* --- TABLES AND PHONES MEDIA QUERY --- */
@@ -18,7 +25,22 @@
   .menu-wp .conteiner-info-server {
     display: block !important;
   }
+  .swal2-container.swal2-center > .swal2-popup {
+    display: grid;
+    max-height: none !important;
+    overflow: none;
+    overflow-y: none;
+    max-width: 100%;
+  }
 }
 
 /* --- IPADS MEDIA QUERY --- */
-// @media screen and (max-width: 1024px){}
+@media screen and (max-width: 1024px){
+  .swal2-container.swal2-center > .swal2-popup {
+    display: grid;
+    max-height: none !important;
+    overflow: none;
+    overflow-y: none;
+    max-width: 100%;
+  }
+}

@@ -69,7 +69,8 @@ export class FooterComponent implements OnInit {
       html: this.informationWP.termsAndConditions,
       backdrop: this.sweetBackdrop,
       width: 1000,
-      confirmButtonText: 'Entendido'
+      confirmButtonText: 'Entendido',
+      showCloseButton: true
     });
   }
 
@@ -78,7 +79,8 @@ export class FooterComponent implements OnInit {
       html: this.informationWP.aboutUs,
       backdrop: this.sweetBackdrop,
       width: 1000,
-      confirmButtonText: 'Entendido'
+      confirmButtonText: 'Entendido',
+      showCloseButton: true
     });
   }
 
@@ -87,7 +89,8 @@ export class FooterComponent implements OnInit {
       html: this.informationWP.rules,
       backdrop: this.sweetBackdrop,
       width: 1000,
-      confirmButtonText: 'Entendido'
+      confirmButtonText: 'Entendido',
+      showCloseButton: true
     });
   }
 
@@ -99,7 +102,8 @@ export class FooterComponent implements OnInit {
         ${this.modalSharedHtml}
       `,
       backdrop: this.sweetBackdrop,
-      confirmButtonText: 'Entendido'
+      confirmButtonText: 'Entendido',
+      showCloseButton: true
     });
   }
 

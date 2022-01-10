@@ -16,12 +16,16 @@
 
   <!--Discord Bot Chat Widgetbot-->
   <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-    new Crate({
-      server: '260001811035848704', // WalkingPlayers
-      channel: '323589720087068672', // #anuncios
-      defer: true,
-      notifications: true
-    })
+    /*En celulares se debe hacer uso de la aplicación de Discord como tal, el discord integrado es para computadoras y dispositivos que lo soporten*/
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (!mobile) {
+      new Crate({
+        server: '260001811035848704', // WalkingPlayers
+        channel: '323589720087068672', // #anuncios
+        defer: true,
+        notifications: true
+      })
+    }
   </script>
   <!--Discord Bot Chat Widgetbot-->
 </head>
